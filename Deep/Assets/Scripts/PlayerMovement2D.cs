@@ -9,6 +9,8 @@ public class PlayerMovement2D : MonoBehaviour
 
     private float horizontalMove = 0f;
     private bool jump = false;
+
+    public Animator animator2D;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,19 @@ public class PlayerMovement2D : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        animator2D.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator2D.SetBool("IsJumping", true);
         }
+    }
+
+    public void OnLanding()
+    {
+        Debug.Log("Mon");
+        animator2D.SetBool("IsJumping", false);
     }
 
     private void FixedUpdate()
