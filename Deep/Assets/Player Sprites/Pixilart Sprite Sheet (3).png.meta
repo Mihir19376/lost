@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ceb17f04293974692967914597e5af35
+guid: 020fc75db9d344e6793770d0a38077c1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ghost_jump_1_0
+      name: Pixilart Sprite Sheet (3)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 421136867cbd3444faf54029f7c7ba04
-      internalID: -31998585
+      spriteID: e302499b40bbe4d2abc3aea0b0bb7700
+      internalID: -1169098741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_jump_1_1
+      name: Pixilart Sprite Sheet (3)_1
       rect:
         serializedVersion: 2
         x: 32
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ce0446209b0441ae924b4e53a699a2c
-      internalID: -1535379240
+      spriteID: 526c6cd59c98b4612aa9d59f0366cafa
+      internalID: 440583954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_jump_1_2
+      name: Pixilart Sprite Sheet (3)_2
       rect:
         serializedVersion: 2
         x: 64
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd05706a3838e4ff0855e8252e59e77b
-      internalID: 1810677221
+      spriteID: c5d43e6364998422d8bb5fc635fec3d6
+      internalID: -24558480
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ghost_jump_1_3
+      name: Pixilart Sprite Sheet (3)_3
       rect:
         serializedVersion: 2
         x: 96
@@ -181,8 +181,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5c97448b5f874bfa968887c1ec734a8
-      internalID: -831642650
+      spriteID: 17e89759d4b2a4cd9843b1663572a735
+      internalID: -1051581386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixilart Sprite Sheet (3)_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036a8bc4ad28e40889d2a0ffa47eb2be
+      internalID: -962069832
       vertices: []
       indices: 
       edges: []
@@ -198,10 +219,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ghost_jump_1_1: -1535379240
-      ghost_jump_1_0: -31998585
-      ghost_jump_1_2: 1810677221
-      ghost_jump_1_3: -831642650
+      Pixilart Sprite Sheet (3)_2: -24558480
+      Pixilart Sprite Sheet (3)_0: -1169098741
+      Pixilart Sprite Sheet (3)_1: 440583954
+      Pixilart Sprite Sheet (3)_3: -1051581386
+      Pixilart Sprite Sheet (3)_4: -962069832
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

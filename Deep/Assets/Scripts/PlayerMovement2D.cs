@@ -11,6 +11,11 @@ public class PlayerMovement2D : MonoBehaviour
     private bool jump = false;
 
     public Animator animator2D;
+
+    public GameObject axePrefab;
+    public Transform spawnPos;
+    int axeDirectionMultiplier;
+    bool isAttacking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +33,11 @@ public class PlayerMovement2D : MonoBehaviour
             jump = true;
             animator2D.SetBool("IsJumping", true);
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isAttacking)
+        {
+            StartCoroutine(SpawnAxe());
+        }
     }
 
     public void OnLanding()
@@ -40,5 +50,22 @@ public class PlayerMovement2D : MonoBehaviour
     {
         controller2D.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
         jump = false;
+    }
+
+    private IEnumerator SpawnAxe()
+    {
+        if (transform.localScale.x < 0)
+        {
+            axeDirectionMultiplier = -1;
+        }
+        else
+        {
+            axeDirectionMultiplier = 1;
+        }
+        GameObject newObject = Instantiate(axePrefab, spawnPos.position, Quaternion.identity) as GameObject;  // instatiate the object
+        newObject.transform.localScale  = new Vector3(newObject.transform.localScale.x * axeDirectionMultiplier, newObject.transform.localScale.y, newObject.transform.localScale.z); // change its local scale in x y z format
+        isAttacking = true;
+        yield return new WaitForSeconds(1);
+        isAttacking = false;
     }
 }
