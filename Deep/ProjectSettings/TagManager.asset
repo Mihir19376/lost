@@ -6,6 +6,7 @@ TagManager:
   tags:
   - axeSpawnPosTag
   - minableBlockTag
+  - waterBlockTag
   layers:
   - Default
   - TransparentFX
