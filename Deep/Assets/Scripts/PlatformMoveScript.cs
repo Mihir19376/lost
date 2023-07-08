@@ -44,7 +44,11 @@ public class PlatformMoveScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.transform.SetParent(transform);
+        if (transform.position.y < collision.transform.position.y)
+        {
+            collision.transform.SetParent(transform);
+        }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)

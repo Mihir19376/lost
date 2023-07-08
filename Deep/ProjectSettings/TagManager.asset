@@ -8,6 +8,7 @@ TagManager:
   - minableBlockTag
   - waterBlockTag
   - mapWallsTag
+  - gemTag
   layers:
   - Default
   - TransparentFX
