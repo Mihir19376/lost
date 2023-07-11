@@ -65,7 +65,8 @@ public class PlayerMovement2D : MonoBehaviour
         GameObject newObject = Instantiate(axePrefab, spawnPos.position, Quaternion.identity) as GameObject;  // instatiate the object
         newObject.transform.localScale  = new Vector3(newObject.transform.localScale.x * axeDirectionMultiplier, newObject.transform.localScale.y, newObject.transform.localScale.z); // change its local scale in x y z format
         isAttacking = true;
-        yield return new WaitForSeconds(1);
+        Animator axeAnimator = newObject.GetComponent<Animator>();
+        yield return new WaitForSeconds(axeAnimator.GetCurrentAnimatorStateInfo(0).length + axeAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         isAttacking = false;
     }
 }

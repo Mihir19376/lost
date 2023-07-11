@@ -16,11 +16,15 @@ public class AxeController : MonoBehaviour
     {
         StartCoroutine(WaitAndDissolve());
         Debug.Log(axeAnimator.GetCurrentAnimatorStateInfo(0).length + axeAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+        GameObject player;
+        player = GameObject.FindGameObjectWithTag("axeSpawnPosTag");
+        Transform playerPos = player.transform;
+        transform.position = playerPos.position;
     }
 
     IEnumerator WaitAndDissolve()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(axeAnimator.GetCurrentAnimatorStateInfo(0).length + axeAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         Debug.Log("Mosjvbhfr");
         Destroy(gameObject);
     }
