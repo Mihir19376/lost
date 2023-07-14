@@ -5,6 +5,10 @@ using UnityEngine;
 public class AxeController : MonoBehaviour
 {
     public Animator axeAnimator;
+    public LayerMask enemyLayer;
+
+    private float timeBetweenAttack;
+    private float startTimeBetweenAttack = .3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +19,25 @@ public class AxeController : MonoBehaviour
     void Update()
     {
         StartCoroutine(WaitAndDissolve());
-        Debug.Log(axeAnimator.GetCurrentAnimatorStateInfo(0).length + axeAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
+
         GameObject player;
         player = GameObject.FindGameObjectWithTag("axeSpawnPosTag");
         Transform playerPos = player.transform;
         transform.position = playerPos.position;
+
+        if (timeBetweenAttack <= 0)
+        {
+            Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(playerPos.position, .3f, enemyLayer);
+            for (int i = 0; i < enemiesToDamage.Length; i++)
+            {
+                enemiesToDamage[i].GetComponent<EnemyController>().TakeDamage(1);
+            }
+            timeBetweenAttack = startTimeBetweenAttack;
+        }
+        else
+        {
+            timeBetweenAttack -= Time.deltaTime;
+        }
     }
 
     IEnumerator WaitAndDissolve()

@@ -119,3 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axeAnimator: {fileID: 3723869683299589206}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256

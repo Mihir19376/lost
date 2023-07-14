@@ -6,23 +6,38 @@ public class EnemyController : MonoBehaviour
 {
     float enemyMoveSpeed = 1f;
     public Transform groundCheck;
-    private float checkRadius = .1f;
+    private float checkRadius = .05f;
     public LayerMask groundLayer;
 
+    int maxEnemyHealth = 5;
+    public int currentEnemyHealth;
+
+    float dazedTime;
+    float startDazeTime = .6f;
     // Start is called before the first frame update
     void Start()
     {
-     
+        currentEnemyHealth = maxEnemyHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Time.deltaTime * enemyMoveSpeed * transform.right);
-        if (!Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer))
+        if (dazedTime <= 0)
         {
-            Flip();
+            transform.Translate(Time.deltaTime * enemyMoveSpeed * transform.right);
+            if (!Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer))
+            {
+                Flip();
+            }
         }
+
+        if (dazedTime > 0)
+        {
+            dazedTime -= Time.deltaTime;
+        }
+
+        
     }
 
     void Flip()
@@ -31,5 +46,11 @@ public class EnemyController : MonoBehaviour
         enemyScale.x *= -1;
         transform.localScale = enemyScale;
         enemyMoveSpeed *= -1;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        dazedTime = startDazeTime;
+        currentEnemyHealth -= damage;
     }
 }
