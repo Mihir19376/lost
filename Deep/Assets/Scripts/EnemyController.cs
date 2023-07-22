@@ -14,10 +14,16 @@ public class EnemyController : MonoBehaviour
 
     float dazedTime;
     float startDazeTime = .6f;
+
+    public GameObject player;
+    float attackDistance = .2f;
+
+    public Animator enemyAnimator2D;
     // Start is called before the first frame update
     void Start()
     {
         currentEnemyHealth = maxEnemyHealth;
+        player = GameObject.FindGameObjectWithTag("playerTag");
     }
 
     // Update is called once per frame
@@ -25,10 +31,26 @@ public class EnemyController : MonoBehaviour
     {
         if (dazedTime <= 0)
         {
-            transform.Translate(Time.deltaTime * enemyMoveSpeed * transform.right);
-            if (!Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer))
+            bool isPlayerInAttackRange = Vector2.Distance(transform.position, player.transform.position) <= attackDistance;
+            bool isPlayerOnSamePlatform = transform.position.y < player.transform.position.y;
+
+            if (isPlayerInAttackRange && isPlayerOnSamePlatform)
             {
-                Flip();
+                Debug.Log("Is on Level");
+                float step = enemyMoveSpeed * Time.deltaTime;
+
+                enemyAnimator2D.SetBool("EnemyAttacking", true);
+                //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, step);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), step);
+            }
+            else
+            {
+                enemyAnimator2D.SetBool("EnemyAttacking", false);
+                transform.Translate(Time.deltaTime * enemyMoveSpeed * transform.right);
+                if (!Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer))
+                {
+                    Flip();
+                }
             }
         }
 
@@ -36,8 +58,6 @@ public class EnemyController : MonoBehaviour
         {
             dazedTime -= Time.deltaTime;
         }
-
-        
     }
 
     void Flip()
