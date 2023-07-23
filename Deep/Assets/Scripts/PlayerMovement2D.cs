@@ -16,10 +16,13 @@ public class PlayerMovement2D : MonoBehaviour
     public Transform spawnPos;
     int axeDirectionMultiplier;
     bool isAttacking = false;
+
+    public int currentPlayerHealth;
+    private int maxPlayerHealth = 10;
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentPlayerHealth = maxPlayerHealth;
     }
 
     // Update is called once per frame
@@ -68,5 +71,10 @@ public class PlayerMovement2D : MonoBehaviour
         Animator axeAnimator = newObject.GetComponent<Animator>();
         yield return new WaitForSeconds(axeAnimator.GetCurrentAnimatorStateInfo(0).length + axeAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime);
         isAttacking = false;
+    }
+
+    public void TakePlayerDamage(int damageToDeal)
+    {
+        currentPlayerHealth -= damageToDeal;
     }
 }

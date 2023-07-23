@@ -19,6 +19,11 @@ public class EnemyController : MonoBehaviour
     float attackDistance = .2f;
 
     public Animator enemyAnimator2D;
+
+    public LayerMask playerLayer;
+
+    private float timeBetweenAttack;
+    private float startTimeBetweenAttack = .3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,17 +36,23 @@ public class EnemyController : MonoBehaviour
     {
         if (dazedTime <= 0)
         {
-            bool isPlayerInAttackRange = Vector2.Distance(transform.position, player.transform.position) <= attackDistance;
-            bool isPlayerOnSamePlatform = transform.position.y < player.transform.position.y;
-
-            if (isPlayerInAttackRange && isPlayerOnSamePlatform)
+            //bool isPlayerInAttackRange = Vector2.Distance(transform.position, player.transform.position) <= attackDistance;
+            //bool isPlayerOnSamePlatform = transform.position.y < player.transform.position.y;
+            if (Physics2D.OverlapCircle(transform.position, .1f, playerLayer))
             {
-                Debug.Log("Is on Level");
+                //Debug.Log("Is on Level");
                 float step = enemyMoveSpeed * Time.deltaTime;
 
                 enemyAnimator2D.SetBool("EnemyAttacking", true);
-                //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, step);
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), step);
+                if (timeBetweenAttack <= 0)
+                {
+                    player.GetComponent<PlayerMovement2D>().TakePlayerDamage(1);
+                    timeBetweenAttack = startTimeBetweenAttack;
+                }
+                else
+                {
+                    timeBetweenAttack -= Time.deltaTime;
+                }
             }
             else
             {
@@ -72,5 +83,11 @@ public class EnemyController : MonoBehaviour
     {
         dazedTime = startDazeTime;
         currentEnemyHealth -= damage;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, .1f);
     }
 }

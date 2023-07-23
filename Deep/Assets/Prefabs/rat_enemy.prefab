@@ -107,7 +107,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1999300902, guid: 545af082209c74f1ab4bfcef632cd8a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -136,6 +136,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   currentEnemyHealth: 0
+  player: {fileID: 0}
+  enemyAnimator2D: {fileID: 7349676017176711313}
 --- !u!95 &7349676017176711313
 Animator:
   serializedVersion: 4

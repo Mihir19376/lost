@@ -11946,11 +11946,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4409637397725573505, guid: 6358fb8926f424d77abd1cfda298bfdc, type: 3}
   m_PrefabInstance: {fileID: 834464642}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &835214319 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7349676017176711313, guid: 5a1e91aaa1b1c4355a5e580b40ae9945, type: 3}
-  m_PrefabInstance: {fileID: 7349676017703451592}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &844931065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13338,11 +13333,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 622942368036873143, guid: b97658743758246a48d3a399cb6d88aa, type: 3}
   m_PrefabInstance: {fileID: 429268491}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &955730974 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1167244342281096304, guid: e79d8e6f5d903411b970074a5bf98793, type: 3}
-  m_PrefabInstance: {fileID: 1167244343144648076}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &957792283
 PrefabInstance:
@@ -16207,7 +16197,7 @@ GameObject:
   - component: {fileID: 1194750571}
   - component: {fileID: 1194750570}
   - component: {fileID: 1194750572}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: playerTag
   m_Icon: {fileID: 0}
@@ -16405,6 +16395,7 @@ MonoBehaviour:
   animator2D: {fileID: 1194750572}
   axePrefab: {fileID: 3723869683299589192, guid: 423eaecb0398b419296e7a9bec7b170e, type: 3}
   spawnPos: {fileID: 329574741}
+  currentPlayerHealth: 0
 --- !u!95 &1194750572
 Animator:
   serializedVersion: 4
@@ -31110,10 +31101,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1167244342281096305, guid: e79d8e6f5d903411b970074a5bf98793, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1167244342281096306, guid: e79d8e6f5d903411b970074a5bf98793, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -31163,9 +31150,9 @@ PrefabInstance:
       value: bat_enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1167244342281097100, guid: e79d8e6f5d903411b970074a5bf98793, type: 3}
-      propertyPath: enemyAnimator2D
-      value: 
-      objectReference: {fileID: 955730974}
+      propertyPath: playerLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e79d8e6f5d903411b970074a5bf98793, type: 3}
 --- !u!1001 &1729103489964743225
@@ -31233,20 +31220,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2383909148043213417, guid: 9dbd15e06f5644e3ca457acfb24aed2f, type: 3}
-      propertyPath: enemyAnimator2D
-      value: 
-      objectReference: {fileID: 2383909148077575637}
-    - target: {fileID: 2383909148043213418, guid: 9dbd15e06f5644e3ca457acfb24aed2f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
+      propertyPath: playerLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 2383909148043213419, guid: 9dbd15e06f5644e3ca457acfb24aed2f, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2383909148043213419, guid: 9dbd15e06f5644e3ca457acfb24aed2f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7505
       objectReference: {fileID: 0}
     - target: {fileID: 2383909148043213419, guid: 9dbd15e06f5644e3ca457acfb24aed2f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31294,11 +31273,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dbd15e06f5644e3ca457acfb24aed2f, type: 3}
---- !u!95 &2383909148077575637 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2383909148043213416, guid: 9dbd15e06f5644e3ca457acfb24aed2f, type: 3}
-  m_PrefabInstance: {fileID: 2383909148077575636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2600979482573686203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31597,16 +31571,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7349676017176711312, guid: 5a1e91aaa1b1c4355a5e580b40ae9945, type: 3}
-      propertyPath: enemyAnimator2D
-      value: 
-      objectReference: {fileID: 835214319}
+      propertyPath: playerLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 7349676017176711325, guid: 5a1e91aaa1b1c4355a5e580b40ae9945, type: 3}
       propertyPath: m_Name
       value: rat_enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7349676017176711326, guid: 5a1e91aaa1b1c4355a5e580b40ae9945, type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7349676017176711327, guid: 5a1e91aaa1b1c4355a5e580b40ae9945, type: 3}
       propertyPath: m_RootOrder
@@ -31614,11 +31584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7349676017176711327, guid: 5a1e91aaa1b1c4355a5e580b40ae9945, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.272
+      value: -1.567
       objectReference: {fileID: 0}
     - target: {fileID: 7349676017176711327, guid: 5a1e91aaa1b1c4355a5e580b40ae9945, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.745
+      value: -1.711
       objectReference: {fileID: 0}
     - target: {fileID: 7349676017176711327, guid: 5a1e91aaa1b1c4355a5e580b40ae9945, type: 3}
       propertyPath: m_LocalPosition.z
