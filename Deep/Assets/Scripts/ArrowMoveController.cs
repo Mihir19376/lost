@@ -6,10 +6,12 @@ public class ArrowMoveController : MonoBehaviour
 {
     public Rigidbody2D arrowRb;
     public float directionMultiplier;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         arrowRb = gameObject.GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("playerTag");
     }
 
     // Update is called once per frame
@@ -22,6 +24,10 @@ public class ArrowMoveController : MonoBehaviour
     {
         if (collision.gameObject.tag != "mapWallsTag")
         {
+            if (collision.gameObject.tag == "playerTag")
+            {
+                player.GetComponent<PlayerMovement2D>().TakePlayerDamage(1);
+            }
             Destroy(gameObject);
         }
     }
