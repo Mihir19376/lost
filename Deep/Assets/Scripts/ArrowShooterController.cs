@@ -18,7 +18,8 @@ public class ArrowShooterController : MonoBehaviour
     {
         if (timeBetweenShot <= 0)
         {
-            GameObject spawnedArrow = Instantiate(arrowPrefab, transform.position, transform.rotation);
+            Vector2 arrowSpawnPos = new Vector2(transform.position.x + .1f * -transform.localScale.y, transform.position.y);
+            GameObject spawnedArrow = Instantiate(arrowPrefab, arrowSpawnPos, transform.rotation);
             ArrowMoveController arrowMoveController = spawnedArrow.GetComponent<ArrowMoveController>();
             if (transform.localScale.y > 0)
             {

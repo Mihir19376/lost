@@ -36,13 +36,8 @@ public class EnemyController : MonoBehaviour
     {
         if (dazedTime <= 0)
         {
-            //bool isPlayerInAttackRange = Vector2.Distance(transform.position, player.transform.position) <= attackDistance;
-            //bool isPlayerOnSamePlatform = transform.position.y < player.transform.position.y;
-            if (Physics2D.OverlapCircle(transform.position, .1f, playerLayer))
+            if (Physics2D.OverlapCircle(transform.position, .05f, playerLayer))
             {
-                //Debug.Log("Is on Level");
-                float step = enemyMoveSpeed * Time.deltaTime;
-
                 enemyAnimator2D.SetBool("EnemyAttacking", true);
                 if (timeBetweenAttack <= 0)
                 {

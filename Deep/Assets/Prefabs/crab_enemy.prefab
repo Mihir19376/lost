@@ -107,6 +107,9 @@ MonoBehaviour:
   currentEnemyHealth: 0
   player: {fileID: 0}
   enemyAnimator2D: {fileID: 2383909148043213416}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &2383909148043213416
 Animator:
   serializedVersion: 4

@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowRb: {fileID: 2757220982184496305}
   directionMultiplier: 0
+  player: {fileID: 0}
 --- !u!50 &2757220982184496305
 Rigidbody2D:
   serializedVersion: 4

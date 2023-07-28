@@ -22,13 +22,10 @@ public class ArrowMoveController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "mapWallsTag")
+        if (collision.gameObject.tag == "playerTag")
         {
-            if (collision.gameObject.tag == "playerTag")
-            {
-                player.GetComponent<PlayerMovement2D>().TakePlayerDamage(1);
-            }
-            Destroy(gameObject);
+            player.GetComponent<PlayerMovement2D>().TakePlayerDamage(1);
         }
+        Destroy(gameObject);
     }
 }
