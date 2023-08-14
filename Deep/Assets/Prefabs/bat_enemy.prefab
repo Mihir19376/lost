@@ -129,7 +129,7 @@ MonoBehaviour:
   enemyAnimator2D: {fileID: 1167244342281096304}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!61 &1167244342281097101
 BoxCollider2D:
   m_ObjectHideFlags: 0

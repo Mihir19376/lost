@@ -109,7 +109,7 @@ MonoBehaviour:
   enemyAnimator2D: {fileID: 2383909148043213416}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!95 &2383909148043213416
 Animator:
   serializedVersion: 4

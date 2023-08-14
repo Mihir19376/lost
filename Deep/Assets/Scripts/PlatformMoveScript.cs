@@ -7,13 +7,14 @@ public class PlatformMoveScript : MonoBehaviour
     public float moveSpeed = 3f;  // Speed at which the platform moves
     Vector2 leftPoint;   // Leftmost point of movement
     Vector2 rightPoint;  // Rightmost point of movement
-    public float leftDistance = 5;
+    //public float leftDistance = 5;
     public float rightDistance = 5;
     private bool movingRight = true;
 
     private void Start()
     {
-        leftPoint = new Vector2(transform.position.x - leftDistance, transform.position.y);
+        //leftPoint = new Vector2(transform.position.x - leftDistance, transform.position.y);
+        leftPoint = transform.position;
         rightPoint = new Vector2(transform.position.x + rightDistance, transform.position.y);
     }
 
@@ -54,6 +55,12 @@ public class PlatformMoveScript : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         collision.transform.SetParent(null);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(rightPoint, .1f);
     }
 
 }

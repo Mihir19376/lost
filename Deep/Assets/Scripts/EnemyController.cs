@@ -64,6 +64,13 @@ public class EnemyController : MonoBehaviour
         {
             dazedTime -= Time.deltaTime;
         }
+
+        // die if health is below 0
+        if (currentEnemyHealth <= 0)
+        {
+            //die
+            Die();
+        }
     }
 
     void Flip()
@@ -84,5 +91,10 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, .1f);
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

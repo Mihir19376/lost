@@ -41,6 +41,13 @@ public class PlayerMovement2D : MonoBehaviour
         {
             StartCoroutine(SpawnAxe());
         }
+
+        // if player health is below or equal to 0, die :)
+        if(currentPlayerHealth <= 0)
+        {
+            //die
+            Die();
+        }
     }
 
     public void OnLanding()
@@ -76,5 +83,11 @@ public class PlayerMovement2D : MonoBehaviour
     public void TakePlayerDamage(int damageToDeal)
     {
         currentPlayerHealth -= damageToDeal;
+    }
+
+    void Die()
+    {
+        //die
+        Debug.Log("Player Died :)");
     }
 }
