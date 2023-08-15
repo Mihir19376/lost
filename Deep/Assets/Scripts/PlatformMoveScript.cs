@@ -7,7 +7,6 @@ public class PlatformMoveScript : MonoBehaviour
     public float moveSpeed = 3f;  // Speed at which the platform moves
     Vector2 leftPoint;   // Leftmost point of movement
     Vector2 rightPoint;  // Rightmost point of movement
-    //public float leftDistance = 5;
     public float rightDistance = 5;
     private bool movingRight = true;
 

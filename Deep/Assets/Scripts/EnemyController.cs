@@ -93,6 +93,10 @@ public class EnemyController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, .1f);
     }
 
+    /// <summary>
+    /// monkey
+    /// 
+    /// </summary>
     void Die()
     {
         Destroy(gameObject);
