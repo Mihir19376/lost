@@ -10,6 +10,7 @@ TagManager:
   - mapWallsTag
   - gemTag
   - playerTag
+  - axeTag
   layers:
   - Default
   - TransparentFX
@@ -22,8 +23,8 @@ TagManager:
   - Enemy
   - Player
   - Gem
-  - 
-  - 
+  - MineBlock
+  - Axe
   - 
   - 
   - 

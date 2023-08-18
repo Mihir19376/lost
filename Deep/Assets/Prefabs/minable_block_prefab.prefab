@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 548446660266481893}
   - component: {fileID: 2569475110158938764}
   - component: {fileID: 2596788106304546962}
-  m_Layer: 0
+  - component: {fileID: 2279631529087979735}
+  m_Layer: 11
   m_Name: minable_block_prefab
   m_TagString: minableBlockTag
   m_Icon: {fileID: 0}
@@ -111,3 +112,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!114 &2279631529087979735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714719890110813515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02956d78d3d54bd5a3f689fd2408e08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axeLayer:
+    serializedVersion: 2
+    m_Bits: 4096
