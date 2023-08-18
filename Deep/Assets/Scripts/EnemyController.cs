@@ -99,6 +99,7 @@ public class EnemyController : MonoBehaviour
     /// </summary>
     void Die()
     {
+        player.GetComponent<PlayerMovement2D>().CollectGem();
         Destroy(gameObject);
     }
 }

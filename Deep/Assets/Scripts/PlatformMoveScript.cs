@@ -15,6 +15,7 @@ public class PlatformMoveScript : MonoBehaviour
         //leftPoint = new Vector2(transform.position.x - leftDistance, transform.position.y);
         leftPoint = transform.position;
         rightPoint = new Vector2(transform.position.x + rightDistance, transform.position.y);
+        moveSpeed = Random.Range(1, 2);
     }
 
     private void Update()

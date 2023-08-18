@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement2D : MonoBehaviour
 {
@@ -17,12 +18,16 @@ public class PlayerMovement2D : MonoBehaviour
     int axeDirectionMultiplier;
     bool isAttacking = false;
 
-    public int currentPlayerHealth;
-    private int maxPlayerHealth = 10;
+    public float currentPlayerHealth;
+    public float maxPlayerHealth = 10;
+
+
+    public int gems;
     // Start is called before the first frame update
     void Start()
     {
         currentPlayerHealth = maxPlayerHealth;
+        gems = 0;
     }
 
     // Update is called once per frame
@@ -88,6 +93,13 @@ public class PlayerMovement2D : MonoBehaviour
     void Die()
     {
         //die
+        SceneManager.LoadScene(2);
         Debug.Log("Player Died :)");
+
+    }
+
+    public void CollectGem()
+    {
+        gems += 1;
     }
 }

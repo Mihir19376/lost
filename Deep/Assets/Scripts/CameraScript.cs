@@ -78,12 +78,12 @@ public class CameraScript : MonoBehaviour
     /// <summary>
     /// The celing (sky) height the camera is restricted to.
     /// </summary>
-    public float ceilingStopLimit = 11;
+    float ceilingStopLimit = 100;
 
     /// <summary>
     /// The floor (ground) height the camera is restricted to.
     /// </summary>
-    public float floorStopLimit = -10.5f;
+    float floorStopLimit = -100f;
 
     /// <summary>
     /// The camera looks ahead at this distance facing the same direction

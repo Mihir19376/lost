@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 918999345}
   - component: {fileID: 918999344}
   m_Layer: 5
-  m_Name: Begin
+  m_Name: return text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Begin...
+  m_text: return...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e478c589507f44fadb0bb6cf45548a00, type: 2}
   m_sharedMaterial: {fileID: 8314591341958399818, guid: e478c589507f44fadb0bb6cf45548a00, type: 2}
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 981924537}
   - component: {fileID: 981924536}
   m_Layer: 5
-  m_Name: Game Title
+  m_Name: Loss title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -396,7 +396,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 339}
+  m_AnchoredPosition: {x: 0, y: 353}
   m_SizeDelta: {x: -2174.543, y: -3272.915}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &981924536
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: lost.
+  m_text: "You... \n       Lost..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e478c589507f44fadb0bb6cf45548a00, type: 2}
   m_sharedMaterial: {fileID: 8314591341958399818, guid: e478c589507f44fadb0bb6cf45548a00, type: 2}
@@ -428,8 +428,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279704856
-  m_fontColor: {r: 0.09411766, g: 0.1137255, b: 0.09019608, a: 1}
+    rgba: 4278194687
+  m_fontColor: {r: 1, g: 0.06547168, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -446,14 +446,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 500
-  m_fontSizeBase: 500
+  m_fontSize: 300
+  m_fontSizeBase: 300
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 1864097788}
   - component: {fileID: 1864097791}
   m_Layer: 5
-  m_Name: Begin Button
+  m_Name: return Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

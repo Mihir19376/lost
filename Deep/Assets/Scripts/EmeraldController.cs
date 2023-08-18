@@ -9,10 +9,13 @@ public class EmeraldController : MonoBehaviour
     Vector3 posOrigin = new Vector3();
     Vector3 tempPos = new Vector3();
 
+    public LayerMask playerLayer;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         posOrigin = transform.position;
+        player = GameObject.FindGameObjectWithTag("playerTag");
     }
 
     // Update is called once per frame
@@ -21,5 +24,14 @@ public class EmeraldController : MonoBehaviour
         tempPos = posOrigin;
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * bobbingFrequency) * bobbingAmplitude;
         transform.position = tempPos;
+
+        if (Physics2D.OverlapCircle(transform.position, .05f, playerLayer))
+        {
+            //destry yourself
+            //add one gem
+            player.GetComponent<PlayerMovement2D>().CollectGem();
+            Destroy(gameObject);
+        }
     }
+
 }
