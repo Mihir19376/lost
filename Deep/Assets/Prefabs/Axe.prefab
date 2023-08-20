@@ -123,6 +123,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  bossLayer:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!61 &3176368725668326758
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,5 +150,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.3767947, y: 0.3767947}
   m_EdgeRadius: 0

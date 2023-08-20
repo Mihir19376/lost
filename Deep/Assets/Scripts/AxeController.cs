@@ -6,13 +6,16 @@ public class AxeController : MonoBehaviour
 {
     public Animator axeAnimator;
     public LayerMask enemyLayer;
+    public LayerMask bossLayer;
 
     private float timeBetweenAttack;
     private float startTimeBetweenAttack = .3f;
+
+    GameObject boss;
     // Start is called before the first frame update
     void Start()
     {
-        
+        boss = GameObject.FindGameObjectWithTag("bossTag");
     }
 
     // Update is called once per frame
@@ -32,6 +35,12 @@ public class AxeController : MonoBehaviour
             {
                 enemiesToDamage[i].GetComponent<EnemyController>().TakeDamage(1);
             }
+            if (Physics2D.OverlapCircle(playerPos.position, .3f, bossLayer))
+            {
+                boss.GetComponent<BossController>().TakeDamage(1);
+            }
+            
+
             timeBetweenAttack = startTimeBetweenAttack;
         }
         else
@@ -47,11 +56,4 @@ public class AxeController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "minableBlockTag")
-        {
-            Destroy(collision.gameObject);
-        }
-    }
 }
