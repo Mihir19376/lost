@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -20,6 +19,8 @@ public class BossController : MonoBehaviour
 
     public int bossHealth;
     public Slider slider;
+
+    public GameObject portal;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +64,9 @@ public class BossController : MonoBehaviour
 
             if (bossHealth <= 0)
             {
-                SceneManager.LoadScene(3);
+                portal.SetActive(true);
+                //SceneManager.LoadScene(3);
+                Destroy(gameObject);
             }
         }
     }

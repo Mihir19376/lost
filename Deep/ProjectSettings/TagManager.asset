@@ -12,6 +12,7 @@ TagManager:
   - playerTag
   - axeTag
   - bossTag
+  - portalTag
   layers:
   - Default
   - TransparentFX

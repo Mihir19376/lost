@@ -23,9 +23,15 @@ public class PlayerMovement2D : MonoBehaviour
 
 
     public int gems;
+
+    public AudioSource heartBeatAudio;
+    float initialDistanceToBossLevel;
+    public GameObject bossBarrier;
     // Start is called before the first frame update
     void Start()
     {
+        heartBeatAudio.volume = 0;
+        initialDistanceToBossLevel = Vector3.Distance(bossBarrier.transform.position, transform.position);
         currentPlayerHealth = maxPlayerHealth;
         gems = 0;
     }
@@ -33,6 +39,7 @@ public class PlayerMovement2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ManageAudio();
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         animator2D.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
@@ -101,5 +108,20 @@ public class PlayerMovement2D : MonoBehaviour
     public void CollectGem()
     {
         gems += 1;
+    }
+
+    void ManageAudio()
+    {
+        float distanceToBossLevel = Vector3.Distance(transform.position, bossBarrier.transform.position);
+        heartBeatAudio.volume = 1 - (distanceToBossLevel / initialDistanceToBossLevel);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "portalTag")
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }
