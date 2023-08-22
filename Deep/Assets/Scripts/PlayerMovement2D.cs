@@ -27,6 +27,8 @@ public class PlayerMovement2D : MonoBehaviour
     public AudioSource heartBeatAudio;
     float initialDistanceToBossLevel;
     public GameObject bossBarrier;
+
+    public AudioSource footstepsAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +61,15 @@ public class PlayerMovement2D : MonoBehaviour
         {
             //die
             Die();
+        }
+
+        if (horizontalMove != 0)
+        {
+            footstepsAudio.enabled = true;
+        }
+        else
+        {
+            footstepsAudio.enabled = false;
         }
     }
 
