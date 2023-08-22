@@ -11,6 +11,8 @@ public class EmeraldController : MonoBehaviour
 
     public LayerMask playerLayer;
     public GameObject player;
+
+    public GameObject particleEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,7 @@ public class EmeraldController : MonoBehaviour
             //destry yourself
             //add one gem
             player.GetComponent<PlayerMovement2D>().CollectGem();
+            Instantiate(particleEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

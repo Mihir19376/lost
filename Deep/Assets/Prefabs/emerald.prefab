@@ -118,3 +118,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   player: {fileID: 0}
+  particleEffect: {fileID: 1753655425721255658, guid: 35f65bd3ca1ab4ef8835ce990018dffa, type: 3}

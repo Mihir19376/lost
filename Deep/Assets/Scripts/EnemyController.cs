@@ -24,6 +24,8 @@ public class EnemyController : MonoBehaviour
 
     private float timeBetweenAttack;
     private float startTimeBetweenAttack = .3f;
+
+    public GameObject particleEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -100,6 +102,7 @@ public class EnemyController : MonoBehaviour
     void Die()
     {
         player.GetComponent<PlayerMovement2D>().CollectGem();
+        Instantiate(particleEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

@@ -141,6 +141,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+  particleEffect: {fileID: 6992526505446641098, guid: 2ea958aa4db464807b7ef403be6acf99, type: 3}
 --- !u!95 &7349676017176711313
 Animator:
   serializedVersion: 4
