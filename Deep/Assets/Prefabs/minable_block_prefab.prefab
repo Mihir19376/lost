@@ -127,3 +127,4 @@ MonoBehaviour:
   axeLayer:
     serializedVersion: 2
     m_Bits: 4096
+  particleEffect: {fileID: 1753655425721255658, guid: c192738eb341245fe8dd82b24e3f70bf, type: 3}

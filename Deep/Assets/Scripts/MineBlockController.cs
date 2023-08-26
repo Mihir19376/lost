@@ -8,6 +8,8 @@ public class MineBlockController : MonoBehaviour
 
     private int mineBlockHealth;
     private bool takingDamage;
+
+    public GameObject particleEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class MineBlockController : MonoBehaviour
         if (mineBlockHealth <= 0)
         {
             // destroy
+            Instantiate(particleEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

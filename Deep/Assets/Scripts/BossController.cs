@@ -24,6 +24,7 @@ public class BossController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bossLevelInitiated = false;
         player = GameObject.FindGameObjectWithTag("playerTag");
         bossHealth = 10;
     }

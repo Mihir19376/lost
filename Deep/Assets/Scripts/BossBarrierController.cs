@@ -7,6 +7,12 @@ public class BossBarrierController : MonoBehaviour
     public GameObject warningMessage;
     private bool warningWait;
 
+    public GameObject particleEffect;
+
+    public GameObject boss;
+
+    private int neededGems = 35;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +29,10 @@ public class BossBarrierController : MonoBehaviour
     {
         if (collision.gameObject.tag == "playerTag")
         {
-            if (collision.gameObject.GetComponent<PlayerMovement2D>().gems == 5)
+            if (collision.gameObject.GetComponent<PlayerMovement2D>().gems >= neededGems)
             {
+                Instantiate(particleEffect, collision.transform.position, Quaternion.identity);
+                boss.GetComponent<BossController>().bossLevelInitiated = true;
                 Destroy(gameObject);
             }
             else

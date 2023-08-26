@@ -28,7 +28,8 @@ public class PlayerMovement2D : MonoBehaviour
     float initialDistanceToBossLevel;
     public GameObject bossBarrier;
 
-    public AudioSource footstepsAudio;
+
+    public GameObject boss;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +42,13 @@ public class PlayerMovement2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ManageAudio();
+        if (boss.GetComponent<BossController>().bossLevelInitiated == false)
+        {
+            ManageAudio();
+        }
+        
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        Debug.Log("Horizontal Move: " + horizontalMove);
         animator2D.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
@@ -60,16 +66,8 @@ public class PlayerMovement2D : MonoBehaviour
         if(currentPlayerHealth <= 0)
         {
             //die
-            Die();
-        }
-
-        if (horizontalMove != 0)
-        {
-            footstepsAudio.enabled = true;
-        }
-        else
-        {
-            footstepsAudio.enabled = false;
+            //Die();
+            StartCoroutine(Die());
         }
     }
 
@@ -108,9 +106,11 @@ public class PlayerMovement2D : MonoBehaviour
         currentPlayerHealth -= damageToDeal;
     }
 
-    void Die()
+    IEnumerator Die()
     {
         //die
+        animator2D.SetBool("isDead", true);
+        yield return new WaitForSeconds(animator2D.GetCurrentAnimatorStateInfo(0).length);
         SceneManager.LoadScene(2);
         Debug.Log("Player Died :)");
 
@@ -123,8 +123,11 @@ public class PlayerMovement2D : MonoBehaviour
 
     void ManageAudio()
     {
-        float distanceToBossLevel = Vector3.Distance(transform.position, bossBarrier.transform.position);
-        heartBeatAudio.volume = 1 - (distanceToBossLevel / initialDistanceToBossLevel);
+        if (bossBarrier != null)
+        {
+            float distanceToBossLevel = Vector3.Distance(transform.position, bossBarrier.transform.position);
+            heartBeatAudio.volume = 1 - (distanceToBossLevel / initialDistanceToBossLevel);
+        }
     }
 
 
@@ -133,6 +136,15 @@ public class PlayerMovement2D : MonoBehaviour
         if (collision.gameObject.tag == "portalTag")
         {
             SceneManager.LoadScene(3);
+        }
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "waterBlockTag")
+        {
+            StartCoroutine(Die());
         }
     }
 }
