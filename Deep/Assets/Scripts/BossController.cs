@@ -21,12 +21,14 @@ public class BossController : MonoBehaviour
     public Slider slider;
 
     public GameObject portal;
+
+    public GameObject particleEffect;
     // Start is called before the first frame update
     void Start()
     {
         bossLevelInitiated = false;
         player = GameObject.FindGameObjectWithTag("playerTag");
-        bossHealth = 10;
+        bossHealth = 30;
     }
 
     // Update is called once per frame
@@ -66,7 +68,7 @@ public class BossController : MonoBehaviour
             if (bossHealth <= 0)
             {
                 portal.SetActive(true);
-                //SceneManager.LoadScene(3);
+                Instantiate(particleEffect, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }

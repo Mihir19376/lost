@@ -9781,7 +9781,7 @@ MonoBehaviour:
   targetOffset: {x: 0, y: 0}
   multiTargetDampening: 3
   minZoom: 1
-  maxZoom: 10
+  maxZoom: 2
   lookAheadAmount: 1
 --- !u!1 &519834951
 GameObject:
@@ -31407,7 +31407,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 30
   m_WholeNumbers: 0
   m_Value: 10
   m_OnValueChanged:
@@ -34806,6 +34806,7 @@ MonoBehaviour:
   bossHealth: 0
   slider: {fileID: 1714961015}
   portal: {fileID: 2036587140}
+  particleEffect: {fileID: 1753655425721255658, guid: c192738eb341245fe8dd82b24e3f70bf, type: 3}
 --- !u!95 &1890409499
 Animator:
   serializedVersion: 4
