@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.26, y: 0.055378415}
+  m_Size: {x: 0.2400372, y: 0.055378415}
   m_EdgeRadius: 0
 --- !u!251 &222080188854301237
 PlatformEffector2D:

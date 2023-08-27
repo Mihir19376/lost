@@ -42,10 +42,7 @@ public class PlayerMovement2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (boss.GetComponent<BossController>().bossLevelInitiated == false)
-        {
-            ManageAudio();
-        }
+        ManageAudio();
         
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         Debug.Log("Horizontal Move: " + horizontalMove);

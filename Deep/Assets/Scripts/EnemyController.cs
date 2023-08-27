@@ -40,6 +40,7 @@ public class EnemyController : MonoBehaviour
         {
             if (Physics2D.OverlapCircle(transform.position, .05f, playerLayer))
             {
+                //faceTowardsPlayer();
                 enemyAnimator2D.SetBool("EnemyAttacking", true);
                 if (timeBetweenAttack <= 0)
                 {
