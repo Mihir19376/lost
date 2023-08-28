@@ -13,7 +13,7 @@ public class BossBarrierController : MonoBehaviour
     // Reference to the boss game object.
     public GameObject boss;
     // The number of gems needed to pass thsi barrier and eneter the boss level. 
-    private int neededGems = 35;
+    private int neededGems = 30;
     // How long the warning is displayed for
     int warningDuration = 1;
 
