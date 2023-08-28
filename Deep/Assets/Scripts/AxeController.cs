@@ -37,7 +37,7 @@ public class AxeController : MonoBehaviour
 
         // Get the player's position.
         Transform playerPos = player.transform;
-        transform.position = playerPos.position;
+        transform.position = playerPos.position; // keep at it
 
         // Check if it's time for the axe to attack based on timeBetweenAttack.
         if (timeBetweenAttack <= 0)

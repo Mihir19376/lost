@@ -8,7 +8,7 @@ public class PlayerMovement2D : MonoBehaviour
     // this is a reference to the Brackeys character controller C# asset
     public CharacterController2D controller2D;
     // this is the run speed of the the character. 
-    public float runSpeed = 40f;
+    public float runSpeed = 30f;
     // this is where I store the horizontal movement input of the player.
     private float horizontalMove = 0f;
     // this is a boolean to denote if the character is jumping or not
@@ -26,7 +26,7 @@ public class PlayerMovement2D : MonoBehaviour
     // this is the curent player's health. 
     public float currentPlayerHealth;
     // this is the beggnign health. 
-    public float maxPlayerHealth = 10;
+    public float maxPlayerHealth = 40;
     // this is the number of gems the player has collected.
     public int gems;
     // this is the rising heartbeat in the background sound effect.
